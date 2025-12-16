@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:sqlite::resource:database.db #jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
+    driverClassName: org.sqlite.JDBC #org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    #database-platform: org.hibernate.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update #create
+    show-sql: false
+  sql:
+    init:
+      mode: NEVER #always
+
+jwt:
+  secret: veryVerySecretKey_that_is_long_enough_for_hs256_please_change_in_prod_1234567890
+  expiration-ms: 3600000
+
+server:
+  port: 8080
